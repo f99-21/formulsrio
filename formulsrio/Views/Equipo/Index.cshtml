@@ -1,0 +1,40 @@
+﻿@*
+    
+*@
+@{
+}
+<h1>Mantenimiento de Equipos</h1>
+<br />
+
+<form asp-action="CrearEquipos">
+    <div class=" form-group row mb-4"></div>
+    <div class=" form-group row mb-4"></div>
+    <div class=" form-group row mb-4"></div>
+    <div class=" form-group row mb-4"></div>
+    <div class=" form-group row mb-4"></div>
+     <div class=" form-group row mb-4"></div>
+    <div class=" form-group row mb-4"></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Descripcion</th>
+                <th>Marcas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var equipo in (IEnumerable<dynamic>)ViewData["listadoEquipo"])
+            {
+                <tr>
+                    <th>@equipo.nombre</th>
+                    <th>@equipo.descripcion</th>
+                    <th>@equipo.marca_nombre</th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</form>
+
+
+

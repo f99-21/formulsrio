@@ -1,0 +1,98 @@
+﻿<h1 class="mb-4">Mantenimiento de Equipos</h1>
+
+<form asp-action="CrearEquipos">
+    <div class="form-group row mb-4">
+        <div class="col-sm-2">
+            <label>Nombre</label>
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBox("nombre", "", new { @class = "form-control" })
+        </div>
+
+        <div class="col-sm-2">
+            @Html.Label("lblDescripcion", "Descripción")
+        </div>
+        <div class="col-sm-4">
+            @Html.TextArea("descripcion", "", new { @class = "form-control", placeholder = "Ingrese la descripción" })
+        </div>
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2">
+            <label>Tipo de Equipo</label>
+        </div>
+        <div class="col-sm-4">
+            <select name="tipo_equipo" class="form-control">
+                <option value="">Seleccione un tipo</option>
+            
+            </select>
+        </div>
+
+        <div class="col-sm-2">
+            <label>Marca</label>
+        </div>
+        <div class="col-sm-4">
+            <select name="marca_id" asp-items="@(ViewData["listadoDeMarcas"] as SelectList)" class="form-control">
+                <option value="">Seleccione una marca</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2">
+            <label>Año de Compra</label>
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBox("año_compra", "", new { @class = "form-control", type = "number" })
+        </div>
+
+        <div class="col-sm-2">
+            <label>Modelo</label>
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBox("modelo", "", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2">
+            <label>Vida Útil</label>
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBox("vida_util", "", new { @class = "form-control", type = "number" })
+        </div>
+
+        <div class="col-sm-2">
+            <label>Costo</label>
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBox("costo", "", new { @class = "form-control", type = "number", step = "0.01" })
+        </div>
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2">
+            <label>Estado de Equipo</label>
+        </div>
+        <div class="col-sm-4">
+            <select name="estado_equipo" class="form-control">
+                <option value="">Seleccione un Estado</option>
+               
+            </select>
+        </div>
+
+        <div class="col-sm-2">
+            <label>Inactivo</label>
+        </div>
+        <div class="col-sm-4">
+            <input type="checkbox" name="inactivo" />
+        </div>
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <input type="submit" class="btn btn-primary" value="Guardar" />
+        </div>
+    </div>
+</form>
